@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Odd or Even</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="icon.png" />
+  </head>
+  <body>
+    <h1>Odd Or Even</h1>
+    <div class="a1">
+      <div class="form">
+        <form action="" name="oddevenForm">
+          <input
+            type="text"
+            name="num"
+            id="num"
+            placeholder="Enter the Number"
+          /><br />
+          <button type="button" onclick="validate()">Check</button>
+          <h3 id="oddeven"></h3>
+        </form>
+      </div>
+    </div>
+    <div class="c11">
+        <a href="index.html"><button class="c1">Back</button></a>
+    </div>
+  </body>
+  <script>
+    function validate() {
+      let b = parseInt(document.oddevenForm.num.value);
+      
+      if(isNaN(b)){
+        alert("Please Enter a Valid Number");
+        return;
+      }
+
+      if( b % 2 == 0 ){
+        document.getElementById("oddeven").innerHTML= b + " is an Even Number"
+      }
+
+      else{
+        document.getElementById("oddeven").innerHTML= b + " is an Odd number"
+      }
+    }
+  </script>
+  </html>

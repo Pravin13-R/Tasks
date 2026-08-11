@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Factorial</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="icon.png" />
+  </head>
+  <body>
+    <h1>Factorial</h1>
+    <div class="a1">
+      <div class="form">
+        <form action="" name="factorialForm">
+          <input
+            type="text"
+            name="num"
+            id="num"
+            placeholder="Enter the Number"
+          /><br />
+          <button type="button" onclick="validate()" id="button">Check</button>
+          <h3 id="result"></h3>
+        </form>
+      </div>
+    </div>
+    <div class="c11">
+        <a href="index.html"><button class="c1">Back</button></a>
+    </div>
+  </body>
+  <script>
+    function validate() {
+      let b = parseInt(document.factorialForm.num.value);
+      
+      if(isNaN(b)){
+        alert("Please Enter a Valid Number");
+        return;
+      }
+
+       if (b < 0) {
+        document.getElementById("result").innerHTML = "Factorial is not defined for negative numbers";
+        return;
+    }
+
+      let fact = 1;
+
+      for( let i = 1;i<= b;i++){
+        fact = fact * i
+      }
+      document.getElementById("result").innerHTML = "Factorial of " + b + " is " + fact;
+    }
+  </script>
+  </html>

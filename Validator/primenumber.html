@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prime number</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="icon.png" />
+  </head>
+  <body>
+    <h1>Prime Numbers</h1>
+    <div class="a1">
+      <div class="form">
+        <form action="" name="primeForm">
+          <input
+            type="text"
+            name="num"
+            id="num"
+            placeholder="Enter the Number"
+          /><br />
+          <button type="button" onclick="validate()">Check</button>
+          <h3 id="prime"></h3>
+        </form>
+      </div>
+    </div>
+    <div class="c11">
+        <a href="index.html"><button class="c1">Back</button></a>
+    </div>
+  </body>
+  <script>
+    function validate() {
+      let b = parseInt(document.getElementById("num").value);
+
+      if (isNaN(b)) {
+        alert("Please enter a valid number");
+        return;
+      }
+
+      if (b <= 1) {
+        document.getElementById("prime").innerHTML = b + " is Not a Prime Number";
+        return;
+      }
+
+      let c = 0;
+
+      for (let i = 2; i <= Math.sqrt(b); i++) {
+        if (b % i == 0) {
+          c++;
+          // break;
+        }
+      }
+
+      if (c == 0) {
+        document.getElementById("prime").innerHTML = b + " is a Prime Number";
+      } 
+      
+      else {
+        document.getElementById("prime").innerHTML = b + " is Not a Prime Number";
+      }
+    }
+  </script>
+</html>

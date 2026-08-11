@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Armstrong Number</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="icon.png" />
+  </head>
+  <body>
+    <h1>Armstrong Number</h1>
+    <div class="a1">
+      <div class="form">
+        <form action="" name="armstrongForm">
+          <input
+            type="text"
+            name="num"
+            id="num"
+            placeholder="Enter the Number"
+          /><br />
+          <button type="button" onclick="validate()">Check</button>
+          <h3 id="armstrong"></h3>
+        </form>
+      </div>
+    </div>
+    <div class="c11">
+      <a href="index.html"><button class="c1">Back</button></a>
+    </div>
+  </body>
+  <script>
+    function validate() {
+      let b = parseInt(document.armstrongForm.num.value);
+
+      if (isNaN(b)) {
+        alert("Enter the valid number");
+        return;
+      }
+      
+      let original = b;
+      let sum = 0;
+
+      while (b > 0) {
+        let digit = b % 10;
+        sum = sum + digit * digit * digit;
+        b = Math.floor(b / 10);
+      }
+
+      if (sum == original) {
+        document.getElementById("armstrong").innerHTML =
+          original + " is a Armstrong number";
+      } 
+      
+      else {
+        document.getElementById("armstrong").innerHTML =
+          original + " is not a Armstrong number";
+      }
+    }
+  </script>
+</html>
